@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TaskDTO {
-    private String taskTitle;
-    private String taskAssignees;
-    private ResourceType taskStatus;
+    private String Title;
+    private String Assignees;
+    private ResourceType Status;
 }

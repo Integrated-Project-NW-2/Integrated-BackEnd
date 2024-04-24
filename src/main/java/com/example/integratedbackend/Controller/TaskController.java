@@ -1,6 +1,7 @@
 package com.example.integratedbackend.Controller;
 
 import com.example.integratedbackend.DTO.TaskDTO;
+import com.example.integratedbackend.DTO.TaskIDDTO;
 import com.example.integratedbackend.Entities.Tasks;
 import com.example.integratedbackend.Service.ListMapper;
 import com.example.integratedbackend.Service.TaskService;
@@ -29,7 +30,7 @@ public class TaskController {
          return ResponseEntity.ok(listMapper.mapList(service.getTasks(), TaskDTO.class,modelMapper));
    }
     @GetMapping("/{id}")
-    public Tasks findAllProducts(@PathVariable Integer id){
-        return service.findByID(id);
+    public ResponseEntity<Object> findAllProducts(@PathVariable Integer id){
+        return ResponseEntity.ok(modelMapper.map(service.findByID(id), TaskIDDTO.class));
     }
 }
