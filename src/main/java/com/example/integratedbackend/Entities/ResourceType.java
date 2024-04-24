@@ -1,5 +1,6 @@
 package com.example.integratedbackend.Entities;
 
 public enum ResourceType {
-    No_Status,To_Do,Doing,Done
+    NO_STATUS, TO_DO, DOING, DONE
 }
+

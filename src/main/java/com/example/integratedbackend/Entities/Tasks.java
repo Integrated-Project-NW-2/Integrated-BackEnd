@@ -1,11 +1,15 @@
 package com.example.integratedbackend.Entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "task", schema = "kradanitbangmod")
+@Getter
+@Setter
 public class Tasks {
     @Id
     @Column(name = "taskId")
