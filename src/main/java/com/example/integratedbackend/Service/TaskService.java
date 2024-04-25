@@ -20,7 +20,7 @@ public class TaskService {
     public Tasks findByID(Integer id){
         return repositories.findById(id).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "task number" + id +"doesn't exist!!!!!!"));
+                        "Task"+ " " + id + " " +"doesn't exist !!!"));
     }
 
 }
