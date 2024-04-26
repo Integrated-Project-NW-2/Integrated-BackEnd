@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.time.ZonedDateTime;
 
 @Entity
 @Table(name = "task", schema = "kradanitbangmod")
@@ -29,10 +30,10 @@ public class Tasks {
     private ResourceType taskStatus;
     
     @Column(name = "createdOn")
-    private Timestamp createdOn;
+    private ZonedDateTime createdOn;
     
     @Column(name = "updatedOn")
-    private Timestamp updatedOn;
+    private ZonedDateTime updatedOn;
 
     
 }

@@ -27,7 +27,7 @@ public class TaskController {
     public ResponseEntity<Object> getTasks(){
          return ResponseEntity.ok(listMapper.mapList(service.getTasks(), TaskDTO.class,modelMapper));
    }
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<Object> findAllProducts(@PathVariable Integer id){
         return ResponseEntity.ok(modelMapper.map(service.findByID(id), TaskIDDTO.class));
     }
