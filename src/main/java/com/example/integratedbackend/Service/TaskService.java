@@ -1,6 +1,7 @@
 package com.example.integratedbackend.Service;
 
 import com.example.integratedbackend.Entities.Tasks;
+import com.example.integratedbackend.ErrorHandle.ItemNotFoundException;
 import com.example.integratedbackend.Repositories.TasksRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,10 +18,11 @@ public class TaskService {
     public List<Tasks> getTasks() {
         return repositories.findAll();
     }
-    public Tasks findByID(Integer id){
+    public Tasks findByID(Integer id) throws ItemNotFoundException {
         return repositories.findById(id).orElseThrow(
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND,
                         "Task"+ " " + id + " " +"doesn't exist !!!"));
     }
+
 
 }
