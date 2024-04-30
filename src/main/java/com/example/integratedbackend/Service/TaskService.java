@@ -20,7 +20,7 @@ public class TaskService {
     }
     public Tasks findByID(Integer id) throws ItemNotFoundException {
         return repositories.findById(id).orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND,
+                () -> new ItemNotFoundException(
                         "Task"+ " " + id + " " +"doesn't exist !!!"));
     }
 
